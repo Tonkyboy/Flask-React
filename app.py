@@ -58,7 +58,6 @@ def get_equipment_img(img_name):
         print("equipment.img returned")
         # return send_file(BytesIO(equipment.img), mimetype=equipment.mimetype)
         return Response(equipment.img, mimetype=equipment.mimetype)
-        # return Response(json.dumps("test"))
     else:
         print("equipment.img returned")
         return 'Image not found!', 404
