@@ -8,6 +8,7 @@ function Equipment() {
   const [equipment, setEquipment] = useState([]);
   const [img, setImg] = useState();
   
+  // in best chase i would be able to parse the datas text and img into this function. But dont know how to
 
   useEffect(() => {
     fetch("/api/get_equipment").then(res => res.json()).then(data => {
@@ -16,6 +17,10 @@ function Equipment() {
     });
   }, []);
 
+  
+  // additional I tried to creat a sperate function to just parse the image over and set it to the Image in the EquipmentCard
+  // This is the part i cant get done
+  // a hook works for one image but i will have many, that wont be connected 
   async function get_equipment_img(equipment) {    
     const res = await fetch("/api/get_equipment_img/" + equipment);
     const imageBlob = await res.blob();
